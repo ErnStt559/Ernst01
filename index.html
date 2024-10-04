@@ -1,0 +1,102 @@
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Магазин одежды</title>
+    <link rel="stylesheet" href="Style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>Fashionista</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Главная</a></li>
+                <li><a href="#">Магазин</a></li>
+                <li><a href="#">О нас</a></li>
+                <li><a href="#">Контакты</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h2>Коллекция осень-зима 2024</h2>
+        <p>Откройте для себя стильные образы, которые выделяют вас из толпы.</p>
+        <a href="#" class="btn">Посмотреть коллекцию</a>
+    </section>
+
+    <section class="products">
+        <h3>Популярные товары</h3>
+        <div class="product-grid">
+            <div class="product-item">
+                <img src="img/dress1.jpg" alt="Платье">
+                <h4>Стильное платье</h4>
+                <p>3 500 руб.</p>
+            </div>
+            <div class="product-item">
+                <img src="img/jacket1.jpg" alt="Куртка">
+                <h4>Зимняя куртка</h4>
+                <p>7 200 руб.</p>
+            </div>
+            <div class="product-item">
+                <img src="img/shoes1.jpg" alt="Обувь">
+                <h4>Ботинки</h4>
+                <p>4 800 руб.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Fashionista. Все права защищены.</p>
+    </footer>
+
+
+    <section class="reviews">
+        <h3>Отзывы о нашей одежде</h3>
+        <div class="review-slider">
+            <div class="review-slide">
+                <img src="review1.jpg" alt="Отзыв 1">
+                <p>Эта одежда очень удобна и стильна!</p>
+            </div>
+            <div class="review-slide">
+                <img src="review2.jpg" alt="Отзыв 2">
+                <p>Отличное качество и прекрасная посадка!</p>
+            </div>
+            <div class="review-slide">
+                <img src="review3.jpg" alt="Отзыв 3">
+                <p>Я люблю носить эту одежду каждый день!</p>
+            </div>
+        </div>
+    </section>
+    <script>
+    // Получаем все слайды
+    const slides = document.querySelectorAll('.review-slide');
+    let currentSlide = 0;
+
+    // Функция для показа следующего слайда
+    function showNextSlide() {
+        // Скрываем текущий слайд
+        slides[currentSlide].classList.remove('active');
+
+        // Увеличиваем индекс слайда (с проверкой на конец списка)
+        currentSlide = (currentSlide + 1) % slides.length;
+
+        // Показываем следующий слайд
+        slides[currentSlide].classList.add('active');
+    }
+
+    // Автоматическое переключение слайдов каждые 5 секунд
+    setInterval(showNextSlide, 5000);
+
+    // Инициализируем первый слайд
+    slides[currentSlide].classList.add('active');
+</script>
+</body>
+</html>
